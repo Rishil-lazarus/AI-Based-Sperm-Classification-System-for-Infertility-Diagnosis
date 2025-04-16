@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sperm Classification - Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Sperm Classification - AI Prediction</h1>
+        
+        <h2> Instructions for Uploading Images</h2>
+        <p>For accurate predictions, please follow the guidelines below when uploading your sperm analysis images. The AI model is optimized for specific microscopic image characteristics.</p>
+
+        <div class="info-box">
+            <h3> Accepted Image Requirements:</h3>
+            <ul>
+                <li><strong>Microscopic Images Only:</strong> Upload images captured using a microscope under proper magnification. Ensure the sperm morphology is clearly visible.</li>
+                <li><strong>Blue-Stained Images Preferred:</strong> The AI model is trained on blue-tinted sperm images (common in microscopy staining techniques). Upload images with a similar blue color tone to ensure correct predictions.</li>
+                <li><strong>Supported File Formats:</strong> BMP or JPG formats are recommended for best compatibility. Ensure the image is not heavily compressed or pixelated.</li>
+                <li><strong>Quality & Clarity:</strong> Well-focused images with clear sperm structures. No excessive noise, distortion, or blurriness.</li>
+            </ul>
+        </div>
+
+        <div class="info-box warning">
+            <h3> Avoid Uploading:</h3>
+            <ul>
+                <li> <strong>Non-Microscopic Images</strong> – Images taken from cameras or scanned documents.</li>
+                <li> <strong>Grayscale or Different Stained Images</strong> – Model accuracy decreases with different colorations.</li>
+                <li> <strong>Low-Resolution or Blurry Images</strong> – Poor quality may lead to incorrect classification.</li>
+                <li> <strong>Overexposed or Underexposed Images</strong> – Maintain proper brightness and contrast.</li>
+            </ul>
+        </div>
+
+        <h3> Best Practices for Accurate Results:</h3>
+        <ul>
+            <li> Use images from the same microscope setup for consistency.</li>
+            <li> Ensure sperm cells are properly visible and not obstructed.</li>
+            <li> For multiple samples, maintain uniform lighting and staining.</li>
+        </ul>
+
+        <p>By following these guidelines, you can ensure the AI model provides highly accurate and reliable predictions.</p>
+
+        <h2> Predict Sperm Classification</h2>
+        <form action="{{ url_for('predict') }}" method="POST" enctype="multipart/form-data">
+            <label for="file">Upload a Microscopic Image:</label>
+            <input type="file" name="file" accept=".jpg, .jpeg, .bmp" required>
+            <button type="submit" class="btn">Predict</button>
+        </form>
+
+        {% if prediction %}
+    <div class="result-box">
+        <h3> Prediction Result:</h3>
+        <p><strong>Class:</strong> {{ prediction }}</p>
+        <p class="confidence"><strong>Confidence:</strong> {{ confidence }}%</p>
+
+        <h3>Uploaded Image:</h3>
+        <img src="{{ image_url }}" alt="Uploaded Image">
+    </div>
+        {% endif %}
+
+
+        <a href="{{ url_for('home') }}" class="btn back-btn">Back to Home</a>
+    </div>
+</body>
+</html>

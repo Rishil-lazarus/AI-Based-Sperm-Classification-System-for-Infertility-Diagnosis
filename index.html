@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Based Sperm Classification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to AI-Based Sperm Classification</h1>
+        <p>Enhancing Fertility Diagnosis with AI</p>
+
+        <h2>Understanding Sperm Classification</h2>
+        <p>Our advanced AI system classifies sperm cells into three main categories to assist in infertility diagnosis and assisted reproductive therapy (ART).</p>
+
+        <div class="info-box">
+            <h3>1. Normal Sperm </h3>
+            <p><strong>Definition:</strong> Healthy sperm cells with proper shape, movement, and viability.</p>
+            <p><strong>Characteristics:</strong></p>
+            <ul>
+                <li> Oval-shaped head with a smooth contour.</li>
+                <li> Properly structured acrosome (essential for egg penetration).</li>
+                <li> Well-defined midpiece for energy production.</li>
+                <li> Straight, functional tail for movement.</li>
+            </ul>
+            <p><strong>Impact:</strong></p>
+            <ul>
+                <li> Increases fertilization success.</li>
+                <li> Supports natural conception and ART procedures (IVF, ICSI).</li>
+                <li> Low Count Consequences: Reduced fertility, requiring ART assistance.</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h3>2. Abnormal Sperm </h3>
+            <p><strong>Definition:</strong> Sperm cells with defects affecting their ability to fertilize an egg.</p>
+            <p><strong>Common Abnormalities:</strong></p>
+            <ul>
+                <li> Head Issues: Large, small, irregular, or multiple heads.</li>
+                <li> Midpiece Defects: Swollen, thin, or bent structures.</li>
+                <li> Tail Deformities: Coiled, short, or broken tails.</li>
+            </ul>
+            <p><strong>Impact:</strong></p>
+            <ul>
+                <li> Lowers fertilization chances.</li>
+                <li> May cause genetic abnormalities or failed pregnancies.</li>
+                <li> Linked to teratozoospermia (high percentage of abnormal sperm).</li>
+                <li> If High in Numbers: Increased male infertility, ART failures.</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h3>3. Non-Sperm Objects </h3>
+            <p><strong>Definition:</strong> Foreign particles, dead sperm, or non-sperm elements in semen.</p>
+            <p><strong>Examples:</strong></p>
+            <ul>
+                <li> White blood cells (infection/inflammation).</li>
+                <li> Debris or epithelial cells.</li>
+                <li> Dead or immotile sperm cells.</li>
+            </ul>
+            <p><strong>Impact:</strong></p>
+            <ul>
+                <li> Indicates contamination, infection, or medical conditions.</li>
+                <li> Reduces sperm function and fertilization potential.</li>
+                <li> If Not Managed: May lead to poor sperm health and require medical attention.</li>
+            </ul>
+        </div>
+
+        <h2>Why Accurate Sperm Classification Matters?</h2>
+        <ul>
+            <li>🔹 Precise Infertility Diagnosis – Identifies sperm health for effective treatment.</li>
+            <li>🔹 Enhanced ART Success – Helps select the best sperm for IVF & ICSI.</li>
+            <li>🔹 Advanced Medical Research – Early detection enables improved fertility solutions.</li>
+            <li>🔹 Personalized Treatment Plans – Supports lifestyle changes and medical interventions.</li>
+            <li>🔹 Reduced Pregnancy Complications – Ensures healthy sperm for successful fertilization.</li>
+        </ul>
+
+        <h2> Empowering Fertility Treatment with AI!</h2>
+        <p>Our AI-driven sperm classification system provides fast, reliable, and accurate analysis for better reproductive health.</p>
+
+        <p><strong> Ready to get started? Try our AI-powered classification now!</strong></p>
+
+        <a href="{{ url_for('predict') }}" class="btn">Start Prediction</a>
+    </div>
+</body>
+</html>

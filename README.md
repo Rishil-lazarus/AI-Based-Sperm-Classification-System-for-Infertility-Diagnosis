@@ -70,7 +70,7 @@ Built an AI-based sperm classification system using a custom CNN to categorize s
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/sperm-classification.git
+   git clone https://github.com/Rishil-lazarus/sperm-classification.git
    cd sperm-classification
 
 
